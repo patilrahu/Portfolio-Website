@@ -202,7 +202,9 @@ class _HomeState extends State<Home> {
                 scrollAnimationLength: 800,
                 curve: Curves.easeInOutCirc,
                 child: SingleChildScrollView(
-                  physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
+                  physics: !ResponsiveHelper.isMobile(context)
+                      ? const NeverScrollableScrollPhysics()
+                      : null,
                   controller: _scrollController,
                   child: Column(
                     children: [
