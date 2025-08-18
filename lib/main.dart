@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:portfolio_website/core/constant/app_color.dart';
+import 'package:portfolio_website/core/helper/responsive.dart';
 import 'package:portfolio_website/feature/home/home.dart';
 import 'package:portfolio_website/feature/splash/splash.dart';
 
@@ -28,7 +29,9 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColor.primaryColor,
         fontFamily: GoogleFonts.nunitoSans().fontFamily,
       ),
-      home: kIsWeb ? AnimatedMouseCursor(child: Splash()) : Splash(),
+      home: !ResponsiveHelper.isMobile(context)
+          ? AnimatedMouseCursor(child: Splash())
+          : Splash(),
     );
   }
 }

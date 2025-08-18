@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return kIsWeb
+    return !ResponsiveHelper.isMobile(context)
         ? AnimatedMouseCursor(child: _scafoldWidget())
         : _scafoldWidget();
   }
