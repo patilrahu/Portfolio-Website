@@ -1,4 +1,5 @@
 import 'package:animated_mouse_cursor/animated_mouse_cursor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/core/constant/app_color.dart';
 import 'package:portfolio_website/core/constant/app_constant.dart';
@@ -49,171 +50,175 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedMouseCursor(
-      child: Scaffold(
-        key: _scaffoldKey,
-        endDrawer: !ResponsiveHelper.isMobile(context)
-            ? null
-            : Drawer(
-                backgroundColor: AppColor.primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusGeometry.circular(0),
-                ),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 30),
-                          alignment: Alignment.center,
-                          child: Image.asset(AppImage.appLogo, height: 100),
-                        ),
-                        Positioned(
-                          right: 0,
-                          child: IconButton(
-                            onPressed: () {
-                              _scaffoldKey.currentState!.closeEndDrawer();
-                            },
-                            icon: Icon(Icons.clear, color: Colors.black),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 50),
-                    OptionWidget(
-                      options: AppConstant.options,
-                      onPressed: (index) {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                        _scaffoldKey.currentState!.closeEndDrawer();
-                        _showPage(index);
-                      },
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: GestureDetector(
-                        onTap: () {
-                          final String resumeURL =
-                              'https://drive.google.com/file/d/1ru2QCXBdy7qh2kSLi0tq8kK1SD9-SYfd/view?usp=share_link';
+    return kIsWeb
+        ? AnimatedMouseCursor(child: _scafoldWidget())
+        : _scafoldWidget();
+  }
 
-                          _launchURL(resumeURL);
-                        },
-                        child: Row(
-                          spacing: 10,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Download My Resume ',
-                              style: TextStyle(
-                                color: AppColor.blackColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 3,
-                                    color: Colors.grey.shade400,
-                                    offset: Offset(1.5, 1.5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Icon(Icons.download_rounded),
-                          ],
+  Widget _scafoldWidget() {
+    return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: !ResponsiveHelper.isMobile(context)
+          ? null
+          : Drawer(
+              backgroundColor: AppColor.primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusGeometry.circular(0),
+              ),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        alignment: Alignment.center,
+                        child: Image.asset(AppImage.appLogo, height: 100),
+                      ),
+                      Positioned(
+                        right: 0,
+                        child: IconButton(
+                          onPressed: () {
+                            _scaffoldKey.currentState!.closeEndDrawer();
+                          },
+                          icon: Icon(Icons.clear, color: Colors.black),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          scrolledUnderElevation: 0,
-          leading: null,
-          backgroundColor: AppColor.primaryColor,
-          title: ResponsiveHelper.isMobile(context)
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Image.asset(AppImage.appLogo, height: 40)],
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(AppImage.appLogo),
-                    OptionWidget(
-                      options: AppConstant.options,
-                      onPressed: (index) {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                        _showPage(index);
-                      },
-                    ),
-                    GestureDetector(
+                    ],
+                  ),
+                  const SizedBox(height: 50),
+                  OptionWidget(
+                    options: AppConstant.options,
+                    onPressed: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                      _scaffoldKey.currentState!.closeEndDrawer();
+                      _showPage(index);
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: GestureDetector(
                       onTap: () {
                         final String resumeURL =
                             'https://drive.google.com/file/d/1ru2QCXBdy7qh2kSLi0tq8kK1SD9-SYfd/view?usp=share_link';
 
                         _launchURL(resumeURL);
                       },
-                      child: Container(
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.only(top: 6),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Row(
-                          spacing: 10,
-                          children: [
-                            Text(
-                              'Resume',
-                              style: TextStyle(
-                                color: AppColor.primaryColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
+                      child: Row(
+                        spacing: 10,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Download My Resume ',
+                            style: TextStyle(
+                              color: AppColor.blackColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 3,
+                                  color: Colors.grey.shade400,
+                                  offset: Offset(1.5, 1.5),
+                                ),
+                              ],
                             ),
-                            Icon(Icons.download_rounded, color: Colors.white),
-                          ],
-                        ),
+                          ),
+                          Icon(Icons.download_rounded),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: Scrollbar(
-                controller: _scrollController,
-                thickness: 10,
+                  ),
+                ],
+              ),
+            ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        scrolledUnderElevation: 0,
+        leading: null,
+        backgroundColor: AppColor.primaryColor,
+        title: ResponsiveHelper.isMobile(context)
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Image.asset(AppImage.appLogo, height: 40)],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(AppImage.appLogo),
+                  OptionWidget(
+                    options: AppConstant.options,
+                    onPressed: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                      _showPage(index);
+                    },
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      final String resumeURL =
+                          'https://drive.google.com/file/d/1ru2QCXBdy7qh2kSLi0tq8kK1SD9-SYfd/view?usp=share_link';
 
-                child: WebSmoothScroll(
-                  controller: _scrollController,
-                  scrollSpeed: 2.1,
-                  scrollAnimationLength: 800,
-                  curve: Curves.easeInOutCirc,
-                  child: SingleChildScrollView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: _scrollController,
-                    child: Column(
-                      children: [
-                        Container(key: profileKey, child: Profile()),
-                        Container(key: educationKey, child: Education()),
-                        Container(key: workExpKey, child: WorkExperience()),
-                        Container(key: skillKey, child: Skill()),
-                        Container(key: projectKey, child: Project()),
-                        Container(key: contactKey, child: ContactUs()),
-                      ],
+                      _launchURL(resumeURL);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      margin: EdgeInsets.only(top: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        spacing: 10,
+                        children: [
+                          Text(
+                            'Resume',
+                            style: TextStyle(
+                              color: AppColor.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Icon(Icons.download_rounded, color: Colors.white),
+                        ],
+                      ),
                     ),
+                  ),
+                ],
+              ),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Scrollbar(
+              controller: _scrollController,
+              thickness: 10,
+
+              child: WebSmoothScroll(
+                controller: _scrollController,
+                scrollSpeed: 2.1,
+                scrollAnimationLength: 800,
+                curve: Curves.easeInOutCirc,
+                child: SingleChildScrollView(
+                  physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
+                  controller: _scrollController,
+                  child: Column(
+                    children: [
+                      Container(key: profileKey, child: Profile()),
+                      Container(key: educationKey, child: Education()),
+                      Container(key: workExpKey, child: WorkExperience()),
+                      Container(key: skillKey, child: Skill()),
+                      Container(key: projectKey, child: Project()),
+                      Container(key: contactKey, child: ContactUs()),
+                    ],
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

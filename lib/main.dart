@@ -1,4 +1,5 @@
 import 'package:animated_mouse_cursor/animated_mouse_cursor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColor.primaryColor,
         fontFamily: GoogleFonts.nunitoSans().fontFamily,
       ),
-      home: AnimatedMouseCursor(child: Splash()),
+      home: kIsWeb ? AnimatedMouseCursor(child: Splash()) : Splash(),
     );
   }
 }

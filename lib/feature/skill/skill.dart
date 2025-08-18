@@ -51,22 +51,22 @@ class Skill extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: ResponsiveHelper.isMobile(context) ? 2 : 4,
               mainAxisSpacing: 10,
-              crossAxisSpacing: 30,
-              childAspectRatio: 0.8,
+              crossAxisSpacing: 10,
+              childAspectRatio: 0.7,
             ),
             itemBuilder: (context, index) {
               var skillData = AppConstant.skillSections[index];
-              return Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(7),
-                  border: Border.all(color: Colors.black, width: 1.5),
-                ),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 250),
+              return ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 150),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryColor,
+                    borderRadius: BorderRadius.circular(7),
+                    border: Border.all(color: Colors.black, width: 1.5),
+                  ),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       const SizedBox(height: 30),
                       Image.asset(skillData.image, height: 50, width: 50),
@@ -80,15 +80,15 @@ class Skill extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 30),
-                      Expanded(
-                        child: Text(
-                          skillData.skills,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            color: AppColor.greyColor,
-                          ),
+                      Text(
+                        skillData.skills,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.greyColor,
                         ),
                       ),
                     ],
