@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/core/constant/app_color.dart';
 import 'package:portfolio_website/core/constant/app_image.dart';
 import 'package:portfolio_website/feature/home/home.dart';
 
@@ -24,7 +25,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   }
 
   void _navigateToScreen() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
@@ -39,6 +40,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +58,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                 child: Image.asset(
                   AppImage.aboutUsLogo,
                   height: 200,
-                  width: 200,
+                  // width: 200,
                 ),
               ),
             ),

@@ -83,8 +83,8 @@ class Skill extends StatelessWidget {
                       Text(
                         skillData.skills,
                         textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                        // maxLines: 2,
+                        // overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,

@@ -19,43 +19,46 @@ class AppConstant {
     SkillSection(
       name: 'Flutter',
       image: AppImage.flutterLogo,
-      skills: 'BLoC, GetX, Provider, Firebase',
+      skills:
+          'Cross-platform app development, Firebase integration, REST APIs, BLoC, GetX, Provider, App Store & Play Store deployment',
     ),
     SkillSection(
       name: 'React Native',
       image: AppImage.reactNativeLogo,
-      skills: 'Cross-platform dev, Hooks, Navigation',
+      skills:
+          'Cross-platform mobile development, Hooks, Navigation, ERPNext API integration',
     ),
     SkillSection(
       name: 'ERPNext / Frappe',
       image: AppImage.erpLogo,
-      skills: 'Client & Server Scripting',
+      skills:
+          'Client & server scripting, API integration, mobile module customization, business automation',
     ),
     SkillSection(
       name: 'iOS (Swift)',
       image: AppImage.swiftLogo,
       skills:
-          ' ViewControllers, Storyboards, CocoaPods, End-to-End App Store Deployment, Provisioning Profiles, Certificates',
+          'SwiftUI, UIKit, Core Data (basic), CocoaPods, Storyboards, Combine, End-to-End iOS deployment',
     ),
   ];
 
   static List<Map<String, String>> projects = [
     {
-      'title': 'Chat App',
-      'date': '08/2025 - Present',
+      'title': 'CryptoTracker',
+      'date': '10/2025 - Present',
       'role': 'Personal Project',
       'description':
-          'Developed a real-time chat application using Flutter and Node.js.\n\n'
-          '• Designed secure login/signup, message synchronization, and instant communication.\n\n'
-          '• Used Clean Architecture and BLoC for state management.\n\n'
-          '• Backend with Express.js, Socket.IO, and MongoDB.',
-      'link': 'https://github.com/patilrahu/Chat-App-Backend',
-      'image': AppImage.projectLogo,
+          'Built a real-time cryptocurrency tracker showing live prices, market cap, 24h volume, and BTC dominance.\n\n'
+          '• Implemented search functionality to filter coins by name or symbol.\n\n'
+          '• Used Combine for reactive data updates and SwiftUI Charts for 7-day trend visualization.\n\n'
+          '• Designed a dark-themed UI with smooth gradients and SF Symbols for a modern look.',
+      'link': 'https://github.com/patilrahu/CryptoTracker',
+      'image': AppImage.cryptoTrackerLogo,
     },
     {
       'title': 'Inminit',
       'date': '04/2025 - 05/2025',
-      'role': 'Freelancing',
+      'role': 'IOS Deployment',
       'description':
           '• Resolved bugs in seller and customer apps.\n\n'
           '• Managed full iOS deployment to the App Store.',

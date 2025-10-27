@@ -34,7 +34,7 @@ class Education extends StatelessWidget {
           ),
           CommonEducationExperince(
             companyName: 'IDOL, University of Mumbai - Distance Learning',
-            date: '09/2023 - Present',
+            date: '09/2023 - 08/2025',
             description: 'Master of Science in Information Technology',
             designation: 'Mumbai',
           ),

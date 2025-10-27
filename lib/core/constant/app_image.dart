@@ -1,6 +1,7 @@
 class AppImage {
   static const _baseImagePath = "assets/images";
   static const _baseIconPath = "assets/icons";
+  static const _baseVideoPath = "assets/video";
   static const linkdein_image = "$_baseIconPath/linkdein.png";
   static const github_image = "$_baseIconPath/github.png";
   static const email_image = "$_baseIconPath/email.png";
@@ -20,4 +21,6 @@ class AppImage {
   static const inmintLogo = "$_baseImagePath/inmint.png";
   static const sadguruLogo = "$_baseImagePath/sadguru.png";
   static const projectLogo = "$_baseImagePath/project.jpg";
+  static const splashLogo = "$_baseImagePath/splash.png";
+  static const cryptoTrackerLogo = "$_baseImagePath/cryptoTracker.png";
 }
