@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_website/core/constant/app_color.dart';
@@ -52,30 +53,67 @@ Widget _buildTextSection() {
             fontFamily: GoogleFonts.nunitoSans().fontFamily,
           ),
           children: [
-            TextSpan(text: "Hello I'm "),
             TextSpan(
-              text: "Rahul Patil.",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              text: "Hello,  I' m ".toUpperCase(),
+              style: TextStyle(fontSize: 16),
             ),
             TextSpan(
-              text: "\nMobile Application ",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(
-              text: "Developer",
-              style: TextStyle(fontWeight: FontWeight.w300),
-            ),
-            TextSpan(text: "\nBased In "),
-            TextSpan(
-              text: "India.",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              text: " Rahul  Patil.  A -".toUpperCase(),
+              style: TextStyle(fontSize: 16),
             ),
           ],
         ),
       ),
-      SizedBox(height: 20),
+      const SizedBox(height: 5),
+      SizedBox(
+        height: 35,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("Developer Who ", style: TextStyle(fontSize: 25)),
+            AnimatedTextKit(
+              repeatForever: true,
+              animatedTexts: [
+                BounceAnimatedText(
+                  duration: const Duration(milliseconds: 500),
+                  "Ships",
+                  textStyle: const TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                BounceAnimatedText(
+                  "Codes",
+                  duration: const Duration(milliseconds: 500),
+                  textStyle: const TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                BounceAnimatedText(
+                  "Solves",
+                  duration: const Duration(milliseconds: 500),
+                  textStyle: const TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                BounceAnimatedText(
+                  "Builds",
+                  duration: const Duration(milliseconds: 500),
+                  textStyle: const TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      SizedBox(height: 15),
       Text(
-        "Mobile Developer with 3+ years' experience building cross-platform apps using Flutter, Swift (iOS), and React Native. Published multiple apps on Play Store and App Store. Skilled in CI/CD, Firebase, and ERPNext integration. Passionate about clean UI/UX and scalable mobile architecture.",
+        "Senior Mobile Application Developer with 4+ years of experience building scalable and high-performance mobile applications using Flutter and iOS (Swift). Experienced in developing production-ready applications with REST APIs, Firebase, state management, and clean architecture, with a focus on reliable and user-friendly mobile experiences.",
         style: TextStyle(
           color: AppColor.greyColor,
           fontSize: 13,

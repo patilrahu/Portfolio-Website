@@ -11,6 +11,7 @@ class AppImage {
   static const educationLogo = "$_baseIconPath/education.png";
   static const workLogo = "$_baseIconPath/work.png";
   static const aboutUsLogo = "$_baseImagePath/about_us.png";
+  static const locationLogo = "$_baseIconPath/location.png";
 
   static const flutterLogo = "$_baseIconPath/flutter.png";
   static const reactNativeLogo = "$_baseIconPath/react_native.png";
@@ -23,4 +24,5 @@ class AppImage {
   static const projectLogo = "$_baseImagePath/project.jpg";
   static const splashLogo = "$_baseImagePath/splash.png";
   static const cryptoTrackerLogo = "$_baseImagePath/cryptoTracker.png";
+  static const iciciDirectLogo = "$_baseImagePath/icici_direct.jpg";
 }

@@ -6,8 +6,8 @@ class AppConstant {
     'Education',
     'Experience',
     'Skills',
-    'Project',
-    'Contact Me',
+    'Work',
+    'Work with me',
   ];
 
   static const linkdeinURL =
@@ -20,7 +20,7 @@ class AppConstant {
       name: 'Flutter',
       image: AppImage.flutterLogo,
       skills:
-          'Cross-platform app development, Firebase integration, REST APIs, BLoC, GetX, Provider, App Store & Play Store deployment',
+          'Cross-platform app development, Firebase integration, REST APIs, BLoC, Clean Architecture, GetX, Provider, App Store & Play Store deployment',
     ),
     SkillSection(
       name: 'React Native',
@@ -44,8 +44,20 @@ class AppConstant {
 
   static List<Map<String, String>> projects = [
     {
+      'title': 'iDirect Mobile App',
+      'date': '12/2025 - Present',
+      'role': 'Trading App',
+      'description':
+          'Developed and enhanced investment and trading features for the iDirect Mobile App.\n\n'
+          '• Implemented the Upcoming Corporate Actions & Order Book feature and improved the Mutual Fund module to enhance user engagement.\n\n'
+          '• Optimized app performance, resolved critical bugs, and improved overall user experience across Android and iOS platforms.\n\n',
+      'link':
+          'https://play.google.com/store/apps/details?id=com.icicidirect.idirectsuper',
+      'image': AppImage.iciciDirectLogo,
+    },
+    {
       'title': 'CryptoTracker',
-      'date': '10/2025 - Present',
+      'date': '10/2025 - 11/2025',
       'role': 'Personal Project',
       'description':
           'Built a real-time cryptocurrency tracker showing live prices, market cap, 24h volume, and BTC dominance.\n\n'
@@ -64,19 +76,6 @@ class AppConstant {
           '• Managed full iOS deployment to the App Store.',
       'link': 'https://apps.apple.com/in/app/inminit-seller/id6745968052',
       'image': AppImage.inmintLogo,
-    },
-    {
-      'title': 'Shopper',
-      'date': '06/2024 - 11/2024',
-      'role': 'E-Commerce Platform',
-      'description':
-          '• Developed a user-friendly e-commerce platform for web and mobile.\n\n'
-          '• Enabled buyers to browse products, track orders, and manage returns.\n\n'
-          '• Built an admin panel for sellers.\n\n'
-          '• Multi-role support for users, sellers, support staff, and admins.',
-      'link':
-          'https://drive.google.com/drive/u/1/folders/1qdsU1YJF9F76ZgcK03ERW8xAhceRyyJ-',
-      'image': AppImage.projectLogo,
     },
     {
       'title': 'Canvia',

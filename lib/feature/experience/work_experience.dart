@@ -41,8 +41,17 @@ class WorkExperience extends StatelessWidget {
             ),
           ),
           CommonWorkExperince(
+            companyName: 'ICICI DIRECT',
+            date: '12/2025 - Present',
+            designation: 'Senior Front-End Developer (Mobile)',
+            description:
+                'Developed and enhanced the iDirect Mobile App using Flutter across Order Book, Corporate Actions, and Mutual Fund modules.'
+                'Resolved critical crashes, bugs, and performance issues while following BLoC and Clean Architecture principles.'
+                'Enhanced Order Book functionality by integrating APIs and real-time market data for accurate order and stock information.',
+          ),
+          CommonWorkExperince(
             companyName: 'ORDNUNGSKRAFT IT ADVISORY PRIVATE LIMITED',
-            date: '11/2024 - Present',
+            date: '11/2024 - 12/2025',
             designation: 'Flutter Developer',
             description:
                 'Developed and maintained cross-platform mobile applications using Flutter and React Native, seamlessly integrated with ERPNext backend systems.'

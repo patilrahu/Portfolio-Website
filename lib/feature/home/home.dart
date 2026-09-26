@@ -141,12 +141,38 @@ class _HomeState extends State<Home> {
         title: ResponsiveHelper.isMobile(context)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Image.asset(AppImage.appLogo, height: 40)],
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(AppImage.locationLogo, height: 30, width: 30),
+                      const SizedBox(width: 5),
+                      Text(
+                        "MUMBAI, IN".toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               )
             : Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(AppImage.appLogo),
+                  Row(
+                    children: [
+                      Image.asset(AppImage.locationLogo, height: 30, width: 30),
+                      const SizedBox(width: 5),
+                      Text(
+                        "MUMBAI, IN".toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                   OptionWidget(
                     options: AppConstant.options,
                     onPressed: (index) {
